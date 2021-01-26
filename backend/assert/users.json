@@ -7,7 +7,8 @@
     "about": "Lorem do excepteur amet do esse est non id nulla sunt excepteur nisi ipsum. Pariatur velit in do deserunt eiusmod voluptate tempor exercitation. Consectetur incididunt nostrud sint anim fugiat excepteur deserunt dolor officia sit exercitation. Sint aute incididunt sunt ullamco officia do exercitation ex Lorem ad reprehenderit quis tempor ea. Anim veniam duis non exercitation excepteur irure proident velit eu ad ad Lorem.\r\n",
     "registered": "2017-11-14T08:55:21 -06:-30",
     "greeting": "Hello, Muriel Nunez! You have 2 unread messages.",
-    "socket": ""
+    "socket": "",
+    "last_message": ""
   },
   {
     "_id": "600fc0a116a76265a6b019dc",
@@ -17,7 +18,8 @@
     "about": "In incididunt tempor voluptate consectetur. Irure tempor esse adipisicing reprehenderit magna id laboris velit ullamco proident. Elit elit consectetur commodo adipisicing ad culpa aliqua.\r\n",
     "registered": "2020-10-20T11:22:30 -06:-30",
     "greeting": "Hello, Elinor Farrell! You have 4 unread messages.",
-    "socket": ""
+    "socket": "",
+    "last_message": ""
   },
   {
     "_id": "600fc0a1019de1a4300e33ba",
@@ -27,7 +29,8 @@
     "about": "Do labore eiusmod aute exercitation ipsum sunt dolore eu. Sunt sit occaecat nisi laboris id minim veniam enim proident non ipsum labore magna. Excepteur amet Lorem occaecat magna magna sit ad veniam. Consectetur nulla ea culpa laboris consectetur dolor exercitation magna dolor nisi tempor cillum laborum irure. Ipsum ut consectetur deserunt ad aliquip officia sint excepteur. Aliqua eu adipisicing sunt anim irure et est in reprehenderit quis dolor reprehenderit commodo deserunt. Duis minim fugiat dolore duis cillum sunt anim laboris proident elit.\r\n",
     "registered": "2015-04-16T01:46:15 -06:-30",
     "greeting": "Hello, Katy Carson! You have 2 unread messages.",
-    "socket": ""
+    "socket": "",
+    "last_message": ""
   },
   {
     "_id": "600fc0a1640401436443324d",
@@ -37,7 +40,8 @@
     "about": "Aliqua veniam aute laborum sint consectetur velit aute eu qui dolor. Culpa voluptate ex commodo est. Velit nostrud nisi reprehenderit ex nostrud laborum laboris cupidatat qui laborum. Eu eu excepteur eu cupidatat.\r\n",
     "registered": "2017-12-08T03:29:23 -06:-30",
     "greeting": "Hello, Avery Kirkland! You have 3 unread messages.",
-    "socket": ""
+    "socket": "",
+    "last_message": ""
   },
   {
     "_id": "600fc0a123d6a0829bad6b5b",
@@ -47,6 +51,7 @@
     "about": "Nostrud eiusmod est reprehenderit magna ea est. Amet qui in consequat mollit deserunt sunt commodo cupidatat. Laboris amet ad nulla occaecat reprehenderit eu cillum dolore culpa eiusmod nulla.\r\n",
     "registered": "2014-03-16T10:23:43 -06:-30",
     "greeting": "Hello, Crystal Patton! You have 9 unread messages.",
-    "socket": ""
+    "socket": "",
+    "last_message": ""
   }
 ]

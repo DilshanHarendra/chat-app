@@ -10,12 +10,16 @@
           <div v-if="!message.send" class="self-start max-width width-fit-content my-2">
             <div class="p-4 text-sm bg-white rounded-t-lg rounded-r-lg shadow">
               {{message.message}}
+              <span class="text-xs block text-right  text-gray-400 ml-3">{{getTime(message.time)}}</span>
+
             </div>
 
           </div>
           <div v-if="message.send" class="self-end max-width width-fit-content my-2">
-            <div class="p-4 text-sm bg-white rounded-t-lg rounded-l-lg shadow">
-              {{message.message}}
+            <div class="p-4 text-sm bg-white rounded-t-lg rounded-l-lg shadow ">
+                {{message.message}}
+              <span class="text-xs block text-right  text-gray-400 ml-3">{{getTime(message.time)}}</span>
+
             </div>
           </div>
         </div>
@@ -33,7 +37,10 @@ name: "Inbox_CurrentChat_MessageBox",
   components: {Inbox_CurrentChat_MessageBox_NewMessage},
   computed:{
     messages(){
-      return this.$store.getters['chat/message']
+      return this.$store.getters['chat/message'](this.userId)
+    },
+    userId(){
+      return this.$store.getters['chat/userid']
     },
 
   },
@@ -41,6 +48,10 @@ name: "Inbox_CurrentChat_MessageBox",
     getDate(){
       let date = new Date().toString().split(" ");
       return `${date[0]} ${date[1]} ${date[2]} ${date[3]}`
+    },
+    getTime(time){
+      let t =new Date(time).toString().split(" ")[4].split(":")
+      return `${t[0]} ${t[1]}`
     }
   }
 }

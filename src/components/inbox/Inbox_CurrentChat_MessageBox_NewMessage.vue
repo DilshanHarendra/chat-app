@@ -43,6 +43,7 @@ name: "Inbox_CurrentChat_MessageBox_NewMessage",
         message:this.message,
         time: new Date(),
         receiver:this.chatID,
+        sender:this.me._id,
         send:true,
         socket:this.userProfile.socket
       }
@@ -57,7 +58,10 @@ name: "Inbox_CurrentChat_MessageBox_NewMessage",
   },
   userProfile(){
     return this.$store.getters['users/id'](this.chatID)
-  }
+  },
+    me(){
+      return this.$store.getters['users/me']
+    }
 }
 }
 </script>

@@ -24,6 +24,7 @@ io.on('connection', socket => {
     })
 
 
+
     socket.on('send',(data)=>{
         socket.broadcast.to(data.socket).emit('receive',{...data,send:false});
     })

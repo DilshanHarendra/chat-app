@@ -1,6 +1,6 @@
 const init ={
     userid:'',
-    messages:[]
+    messages:{}
 }
 export default {
     state:init,
@@ -10,7 +10,18 @@ export default {
             state.userid=payload.userid
         },
         setMessage(state,payload){
-            state.messages.push(payload.message)
+            if (state.messages[payload.message.receiver]){
+                state.messages[payload.message.receiver].push(payload.message)
+            }else{
+                state.messages={...state.messages,[payload.message.receiver]:[payload.message]}
+            }
+        },
+        setReceiveMessage(state,payload){
+            if (state.messages[payload.message.sender]){
+                state.messages[payload.message.sender].push(payload.message)
+            }else{
+                state.messages={...state.messages,[payload.message.sender]:[payload.message]}
+            }
         },
 
     },
@@ -22,16 +33,17 @@ export default {
             commit('setMessage',{message:data})
         },
         SET_RECEIVED({commit},data){
-            commit('setMessage',{message:data})
+            commit('setReceiveMessage',{message:data})
         }
     },
     getters:{
         userid(state){
             return state.userid
         },
-        message(state){
-            return state.messages
+        message:(state)=>(id)=>{
+            return state.messages[id]
         },
+
 
 
     }

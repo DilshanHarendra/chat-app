@@ -1,10 +1,10 @@
 <template>
   <li class="flex flex-no-wrap items-center pr-3 text-black rounded-lg cursor-pointer mt-200 py-65 hover:bg-gray-200" style="padding-top: 0.65rem; padding-bottom: 0.65rem">
- 
+
     <div class="flex justify-between w-full focus:outline-none">
       <div class="flex justify-between w-full">
         <div class="relative flex items-center justify-center w-12 h-12 ml-2 mr-3 text-xl font-semibold text-white bg-blue-500 rounded-full flex-no-shrink">
-          <img class="object-cover w-12 h-12 rounded-full" :src="data.picture" :alt="data.name">
+          <img class="object-cover w-12 h-12 rounded-full object-cover" :src="data.picture" :alt="data.name">
           <div class="absolute bottom-0 right-0 flex items-center justify-center bg-white rounded-full" style="width: 0.80rem; height: 0.80rem">
             <div class="bg-green-500 rounded-full" style="width: 0.6rem; height: 0.6rem"></div>
           </div>
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="flex justify-between text-sm leading-none truncate">
-            <span>Writing...</span>
+            <span class="text-gray-500 truncate w-3/4">{{data.last_message||'Start Chatting'}}</span>
             <span  class="flex items-center justify-center w-5 h-5 text-xs text-right text-white bg-green-500 rounded-full">2</span>
           </div>
         </div>
@@ -36,7 +36,10 @@
 <script>
 export default {
 name: "Inbox_ChatList_SingleChat",
-  props:{data:Object}
+  props:{data:Object},
+  computed:{
+
+  }
 }
 </script>
 

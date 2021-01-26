@@ -41,6 +41,7 @@ export default {
       this.$store.dispatch('users/SET_ME',me)
     },
     receive(message){
+      this.$store.dispatch('users/SET_LAST_MESSAGE',{id:message.sender,message:message.message})
       this.$store.dispatch('chat/SET_RECEIVED',message)
     }
   },
