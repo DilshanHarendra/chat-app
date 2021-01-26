@@ -33,7 +33,9 @@ export default {
 name: "Inbox_CurrentChat_MessageBox_NewMessage",
   data(){
     return{
-      message:''
+      message:'',
+      timer:'',
+      typing:false
     }
   },
   methods:{
@@ -53,16 +55,26 @@ name: "Inbox_CurrentChat_MessageBox_NewMessage",
     }
   },
   computed:{
-  chatID(){
-    return this.$store.getters['chat/userid']
+    chatID(){
+      return this.$store.getters['chat/userid']
+    },
+    userProfile(){
+      return this.$store.getters['users/id'](this.chatID)
+    },
+      me(){
+        return this.$store.getters['users/me']
+      }
   },
-  userProfile(){
-    return this.$store.getters['users/id'](this.chatID)
-  },
-    me(){
-      return this.$store.getters['users/me']
+  watch:{
+    message(){
+      this.typing=true
+      clearTimeout(this.timer)
+      this.timer=setTimeout(()=>this.typing=false,3000)
+    },
+    typing(){
+      this.$socket.emit('typing',{id:this.me._id,typing:this.typing,socket:this.userProfile.socket})
     }
-}
+  }
 }
 </script>
 

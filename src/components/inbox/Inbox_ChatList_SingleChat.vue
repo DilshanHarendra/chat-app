@@ -23,7 +23,8 @@
             </div>
           </div>
           <div class="flex justify-between text-sm leading-none truncate">
-            <span class="text-gray-500 truncate w-3/4">{{data.last_message||'Start Chatting'}}</span>
+            <span v-if="typing" class="text-green-500 font-semibold">Typing...</span>
+            <span v-if="!typing" class="text-gray-500 truncate w-3/4">{{data.last_message||'Start Chatting'}}</span>
             <span  class="flex items-center justify-center w-5 h-5 text-xs text-right text-white bg-green-500 rounded-full">2</span>
           </div>
         </div>
@@ -37,8 +38,28 @@
 export default {
 name: "Inbox_ChatList_SingleChat",
   props:{data:Object},
-  computed:{
+  data(){
+    return{
+      typing:''
+    }
+  },
+  methods:{
 
+  },
+  sockets:{
+      typing(data){
+        console.log("datra",data ,this.data._id )
+      if (data.id==this.data._id){
+        if (data.typing){
+          console.log("typing",data ,this.data._id )
+          this.typing="Typing..."
+        }else{
+          console.log("stop",data ,this.data._id )
+          this.typing=""
+        }
+
+      }
+    }
   }
 }
 </script>
